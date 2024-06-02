@@ -13,6 +13,8 @@ const ThoughtUserSchema = new Schema(
             required: "An email is required",
             unique: true,
             //have to figure out matching validation here
+            match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, 'Please enter a valid email'],
+
         },
         thoughs: [
             {
