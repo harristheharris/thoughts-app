@@ -13,7 +13,7 @@ connect(connectionString, {
 });
 
 //lets log our queries
-set("debug", true);
+//set("debug", true);
 
 module.exports = connection;
 
