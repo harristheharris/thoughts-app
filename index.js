@@ -7,7 +7,7 @@ console.log(`importing express DOWNLOAD`);
 console.log(`importing express COMPLETE`);
 
 console.log(`importing db from ./config/connection START`);
-const db = require('./config/connection');
+const db = require('./config/connections.js');
 console.log(`importing db from ./config/connection DOWNLOAD`);
 console.log(`importing db from ./config/connection COMPLETE`);
 

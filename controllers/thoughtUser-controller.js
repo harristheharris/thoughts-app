@@ -1,4 +1,4 @@
-const { ThoughtUser, Thougt } = require('../models')
+const { ThoughtUser, Thought } = require('../models')
 
 module.exports = {
     //get all the students
@@ -11,7 +11,7 @@ module.exports = {
                 })
                 .select("-__v")
                 .sort({ _id: -1 })
-                .then((dbUserData) => res.json(dbUserData))
+                .then((user) => res.json(user))
 
         } catch (err) {
             console.log(err);
@@ -32,12 +32,12 @@ module.exports = {
                     select: "-__v"
                 })
                 .select("-__v")
-                .then((dbUserData) => {
-                    if (!dbUserData) {
+                .then((user) => {
+                    if (!user) {
                         return res.status(404)
                             .json({ message: "no user found with this id" })
                     }
-                    res.json(dbUserData)
+                    res.json(user)
                 })
 
         } catch (err) {
@@ -61,8 +61,8 @@ module.exports = {
     async deleteUser(req, res) {
         try {
             const user = await ThoughtUser.findOneAndDelete({ _id: req.params.id })
-                .then((dbUserData) => {
-                    if (!dbUserData) {
+                .then((user) => {
+                    if (!user) {
                         return res.status(400).json({ message: "no user with this id" })
                     }
                 })
