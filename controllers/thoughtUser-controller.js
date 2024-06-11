@@ -33,7 +33,7 @@ module.exports = {
                 })
                 .select("-__v")
                 .then((user) => {
-                    if (!dbUserData) {
+                    if (!user) {
                         return res.status(404)
                             .json({ message: "no user found with this id" })
                     }
