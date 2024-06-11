@@ -1,4 +1,4 @@
-# SeeSS
+# Thoughts-App
 
 
 ## **Table of Contents:**
